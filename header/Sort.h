@@ -37,6 +37,27 @@ namespace algorithm{
         }
 
         template <typename T>
+        void SelectSort(T& nums){
+            int length = nums.size();
+            int left = 0;
+            int right = length - 1;
+            while(left < right){
+                int ptr = left;
+                int min_num_index = left;
+                while (ptr <= right)
+                {
+                   if (nums[ptr] < nums[min_num_index]){
+                    min_num_index = ptr;
+                   }
+                   ptr += 1;
+                }
+                swap(nums[left], nums[min_num_index]);
+                left += 1;
+            }
+            Print(nums);
+        }
+
+        template <typename T>
         void Print(T& nums){
             int length = nums.size();
             for (size_t i = 0; i < length; i++)
