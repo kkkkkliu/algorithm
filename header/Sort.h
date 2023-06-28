@@ -18,6 +18,24 @@ namespace algorithm{
         }
 
         template <typename T>
+        void Print(T& nums){
+            int length = nums.size();
+            for (size_t i = 0; i < length; i++)
+            {
+                std::cout<<nums[i]<<std::endl;
+            }
+        }
+
+        std::vector<double> RandVec(int length){
+            std::vector<double> ret;
+            for (size_t i = 0; i < length; i++)
+            {
+               ret.push_back(rand());
+            }
+            return ret;
+        }
+
+        template <typename T>
         void BubbleSort(T& nums){
             int length = nums.size();
             int left = 0;
@@ -55,15 +73,6 @@ namespace algorithm{
                 left += 1;
             }
             Print(nums);
-        }
-
-        template <typename T>
-        void Print(T& nums){
-            int length = nums.size();
-            for (size_t i = 0; i < length; i++)
-            {
-                std::cout<<nums[i]<<std::endl;
-            }
         }
 
     };
