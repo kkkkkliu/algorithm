@@ -170,15 +170,15 @@ namespace algorithm{
             int left_ptr = left-1;
             int right_ptr = right+1;
             int middle_ptr = left;
-            int middle_val = nums[left];
+            int middle_val = nums[rand() % (right - left + 1) + left];
             while(middle_ptr < right_ptr){
                 if(nums[middle_ptr] == middle_val){
                     ++middle_ptr;
                 }
-                if(nums[middle_ptr] > middle_val){
+                else if(nums[middle_ptr] > middle_val){
                     swap(nums[middle_ptr], nums[--right_ptr]);
                 }
-                if(nums[middle_ptr] < middle_val){
+                else if(nums[middle_ptr] < middle_val){
                     swap(nums[middle_ptr++], nums[++left_ptr]);
                 }
             }
