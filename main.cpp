@@ -11,7 +11,8 @@ int main(){
    // sort_instance.InsertSort(test_vec);
    // test_vec = sort_instance.RandVec(10);
    // sort_instance.MergeSort(test_vec);
-   sort_instance.MergeSortRecursion(test_vec);
+   // sort_instance.MergeSortRecursion(test_vec);
+   sort_instance.QucikSort(test_vec);
    system("Pause");
    return 0;
 }

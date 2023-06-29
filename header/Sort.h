@@ -162,5 +162,36 @@ namespace algorithm{
             Print(nums);
         }
 
+        template <typename T>
+        void QuickSortInternal(T& nums, int left, int right){
+            if (left >= right){
+                return;
+            }
+            int left_ptr = left-1;
+            int right_ptr = right+1;
+            int middle_ptr = left;
+            int middle_val = nums[left];
+            while(middle_ptr < right_ptr){
+                if(nums[middle_ptr] == middle_val){
+                    ++middle_ptr;
+                }
+                if(nums[middle_ptr] > middle_val){
+                    swap(nums[middle_ptr], nums[--right_ptr]);
+                }
+                if(nums[middle_ptr] < middle_val){
+                    swap(nums[middle_ptr++], nums[++left_ptr]);
+                }
+            }
+            QuickSortInternal(nums, left, left_ptr);
+            QuickSortInternal(nums, right_ptr, right);
+
+        }
+
+        template <typename T>
+        void QucikSort(T& nums){
+            QuickSortInternal(nums, 0, nums.size()-1);
+            Print(nums);
+        }
+
     };
 }
